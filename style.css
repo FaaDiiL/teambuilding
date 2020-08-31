@@ -1,0 +1,89 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(#a09b81, #FFFFFF);
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    margin: 40px 80px 40px 80px;
+}
+
+/*header {}
+*/
+header h1{
+    text-align: center;
+}
+
+#navbar {
+    display: grid;
+    place-items: center;
+    background-color: #1b1b1b;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+.nav-list-item {
+    display: inline-block;
+}
+
+.nav-link {
+    display: block;
+    padding: 20px 35px 20px 35px;
+    text-decoration: none;
+    color: white;
+}
+.nav-link:hover {
+    background-color: rgba(7, 43, 18, 0.952);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + main{
+    padding-top: 60px;
+  }
+
+#new-movies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    
+}
+
+
+article{
+    background-color: #424242;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+img {
+    border: solid 1px white;
+    margin-top: 10px;
+    width: 100%;
+    max-height: 580px;
+}
+footer {
+    margin-top: 10px;
+    padding: 25px 0px;
+    background-color: #1b1b1b;
+    text-align: center;
+    color: white;
+}
