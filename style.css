@@ -92,7 +92,7 @@ header h1 {
 
 .movie-card {
   background-color: #f2f2f2;
-  border-radius: 5%;
+  border-radius: 1.5vw 4vw;
   padding: 1.5vw;
   box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2),
     0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
@@ -100,6 +100,7 @@ header h1 {
 
 .moive-image {
   margin-top: 0.5vw;
+  border-radius: 1.5vw 4vw;
   width: 100%;
 }
 
