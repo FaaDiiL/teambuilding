@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -21,7 +21,7 @@ main {
 */
 header h1 {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 10vw;
   font-weight: 900;
   -webkit-text-stroke-width: 1px;
@@ -48,7 +48,6 @@ header h1 {
 
 .nav-list-item {
   display: inline-block;
-  
 }
 
 .nav-link {
@@ -57,12 +56,10 @@ header h1 {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  border-bottom: .5vw solid #1b1b1b;
+  border-bottom: 0.5vw solid #1b1b1b;
 }
 .nav-link:hover {
   border-color: white;
-
-  
 }
 
 .sticky {
@@ -103,7 +100,7 @@ header h1 {
     0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
 }
 
-.moive-image {
+.movie-image {
   margin-top: 0.5vw;
   border-radius: 1.5vw 4vw;
   width: 100%;
@@ -152,7 +149,8 @@ footer {
   color: white;
 }
 
-.form-section input, select {
+.form-section input,
+select {
   margin-bottom: 10px;
 }
 
@@ -174,7 +172,7 @@ h2 {
 
 .success-popup {
   color: rgb(34, 34, 34);
-  background-color: #4BB543;
+  background-color: #4bb543;
   border-radius: 5px;
 }
 
