@@ -40,7 +40,7 @@ let movies = [
 // Element selector
 const movieMain = document.querySelector('#movie-rendering')
 
-// Event handler
+// Handler
 window.onload = function () {
   renderMovies()
 }
