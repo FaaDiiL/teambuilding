@@ -35,59 +35,69 @@ let movies = [
     img: `https://m.media-amazon.com/images/M/MV5BMDhjZWViN2MtNzgxOS00NmI4LThiZDQtZDI3MzM4MDE4NTc0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,699,1000_AL_.jpg`,
     ageLimit: 7,
   },
-]
+];
 
 // Element selector
-const movieMain = document.querySelector('#movie-rendering')
+const movieMain = document.querySelector("#movie-rendering");
 
 // Handler
 window.onload = function () {
-  renderMovies()
-}
+  renderMovies();
+  transition();
+};
 window.onscroll = function () {
-  myFunction()
-}
+  myFunction();
+};
 
 // Variables
-let navbar = document.getElementById('navbar')
-let sticky = navbar.offsetTop
+let navbar = document.getElementById("navbar");
+let sticky = navbar.offsetTop;
 
 // Functions
+function transition() {
+  let cards = document.querySelectorAll(".movie-card");
+  //selector selecting all .movie-card and puts them in array
+  for (let i = 0; i < cards.length; i++) {
+    let delay = i * 0.2;
+    cards[i].style.animationDelay = `${delay}s`;
+  }
+  //give each list item an animation-delay attribute
+}
 function renderMovies() {
-  let movieList = document.createElement('section')
+  let movieList = document.createElement("section");
 
   // Setting up id
-  movieList.setAttribute('id', 'new-movies')
-  movieList.setAttribute('class', 'container')
-  movieMain.appendChild(movieList)
+  movieList.setAttribute("id", "new-movies");
+  movieList.setAttribute("class", "container");
+  movieMain.appendChild(movieList);
 
   movies.forEach((movie) => {
     // Creating elements for movie card ...
-    let movieCard = document.createElement('article')
-    let movieImg = document.createElement('img')
-    let movieTitle = document.createElement('h2')
-    let movieBio = document.createElement('p')
+    let movieCard = document.createElement("article");
+    let movieImg = document.createElement("img");
+    let movieTitle = document.createElement("h2");
+    let movieBio = document.createElement("p");
 
-    movieCard.setAttribute('class', 'col movie-card')
-    movieImg.setAttribute('class', 'movie-image')
-    movieTitle.setAttribute('class', 'movie-title')
-    movieBio.setAttribute('class', 'movie-bio')
+    movieCard.setAttribute("class", "col movie-card");
+    movieImg.setAttribute("class", "movie-image");
+    movieTitle.setAttribute("class", "movie-title");
+    movieBio.setAttribute("class", "movie-bio");
 
-    movieImg.setAttribute('src', `${movie.img}`)
-    movieTitle.innerText = movie.title
-    movieBio.innerText = movie.bio
+    movieImg.setAttribute("src", `${movie.img}`);
+    movieTitle.innerText = movie.title;
+    movieBio.innerText = movie.bio;
 
-    movieList.appendChild(movieCard)
-    movieCard.appendChild(movieImg)
-    movieCard.appendChild(movieTitle)
-    movieCard.appendChild(movieBio)
-  })
+    movieList.appendChild(movieCard);
+    movieCard.appendChild(movieImg);
+    movieCard.appendChild(movieTitle);
+    movieCard.appendChild(movieBio);
+  });
 }
 
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add('sticky')
+    navbar.classList.add("sticky");
   } else {
-    navbar.classList.remove('sticky')
+    navbar.classList.remove("sticky");
   }
 }

@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -14,14 +14,15 @@ body {
 }
 
 main {
-  margin: 4vw 8vw 4vw 8vw;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /*header {}
 */
 header h1 {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 10vw;
   font-weight: 900;
   -webkit-text-stroke-width: 1px;
@@ -84,11 +85,13 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .col {
-  flex: 25%;
-  margin: 0.5%;
+  flex: 20%;
+  margin: 2%;
 }
 
 .movie-card {
@@ -97,12 +100,20 @@ header h1 {
   padding: 1.5vw;
   box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2),
     0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
 }
 
 .movie-image {
   margin-top: 0.5vw;
   border-radius: 1.5vw 4vw;
   width: 100%;
+}
+.movie-bio {
+  font-size: 0.9em;
+}
+.movie-title {
+  font-size: 1em;
 }
 
 footer {
@@ -214,5 +225,13 @@ h2 {
     background-color: #1b1b1b;
     color: white;
     border-radius: 2vw;
+  }
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
