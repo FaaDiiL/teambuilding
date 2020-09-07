@@ -169,9 +169,10 @@ select {
   width: 600px;
   margin: 50px auto;
   text-align: center;
-  background-color: #1b1b1b;
-  color: white;
-  border-radius: 2vw;
+  color: black;
+  background-color: #e2e2e2;
+  border-radius: 1.5vw 4vw;
+  box-shadow:15px 15px 10px rgb(114, 114, 114); 
 }
 .movie-form {
   padding: 20px;
@@ -182,9 +183,51 @@ h2 {
 }
 
 .success-popup {
-  color: rgb(34, 34, 34);
-  background-color: #4bb543;
-  border-radius: 5px;
+  color: black;
+  background-color: #4CAF50;
+  border-radius: 6px;
+  border: 3px solid black;
+  padding: 5px;
+  margin: 10px 20%;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 6px 8px;
+  margin: 3px 0px 8px 0px;
+  border: 3px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 40%;
+  background-color: white;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  border: 3px solid black;
+}
+
+button[type=submit]:hover {
+  background-color: #d1d1d1;
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media screen and (max-width: 992px) {
@@ -202,9 +245,10 @@ h2 {
     min-width: 50%;
     margin: 7% auto;
     text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-    border-radius: 2vw;
+    color: black;
+    background-color: #e2e2e2;
+    border-radius: 1.5vw 4vw;
+    box-shadow:15px 15px 10px rgb(114, 114, 114); 
   }
 }
 
@@ -223,9 +267,10 @@ h2 {
     min-width: 350px;
     margin: 50px auto;
     text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-    border-radius: 2vw;
+    color: black;
+    background-color: #e2e2e2;
+    border-radius: 1.5vw 4vw;
+    box-shadow:15px 15px 10px rgb(114, 114, 114); 
   }
 }
 @keyframes fadeInAnimation {
