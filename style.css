@@ -25,7 +25,7 @@ header h1 {
   font-family: "Roboto", sans-serif;
   font-size: 10vw;
   font-weight: 900;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.1vw;
   -webkit-text-stroke-color: white;
   -webkit-text-fill-color: #1b1b1b;
   background-color: #1b1b1b;
@@ -53,7 +53,7 @@ header h1 {
 
 .nav-link {
   display: block;
-  padding: 20px 35px 20px 35px;
+  padding: 2vw 3.5vw 2vw 3.5vw;
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -92,16 +92,17 @@ header h1 {
 .col {
   flex: 20%;
   margin: 2%;
+  padding: 1.5vw;
 }
 
 .movie-card {
   background-color: #f2f2f2;
   border-radius: 1.5vw 4vw;
-  padding: 1.5vw;
   box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2),
     0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
+  animation-duration: 1s;
 }
 
 .movie-image {
@@ -171,7 +172,7 @@ select {
   color: black;
   background-color: #e2e2e2;
   border-radius: 1.5vw 4vw;
-  box-shadow:15px 15px 10px rgb(114, 114, 114); 
+  box-shadow: 15px 15px 10px rgb(114, 114, 114);
 }
 .movie-form {
   padding: 20px;
@@ -183,14 +184,15 @@ h2 {
 
 .success-popup {
   color: black;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border-radius: 6px;
   border: 3px solid black;
   padding: 5px;
   margin: 10px 20%;
 }
 
-input[type=text], select {
+input[type="text"],
+select {
   width: 50%;
   padding: 6px 8px;
   margin: 3px 0px 8px 0px;
@@ -199,7 +201,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-button[type=submit] {
+button[type="submit"] {
   width: 40%;
   background-color: white;
   color: black;
@@ -208,12 +210,12 @@ button[type=submit] {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.2em;
   border: 3px solid black;
 }
 
-button[type=submit]:hover {
+button[type="submit"]:hover {
   background-color: #d1d1d1;
 }
 
@@ -226,7 +228,7 @@ textarea {
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media screen and (max-width: 992px) {
@@ -242,12 +244,12 @@ textarea {
   .form-section {
     max-width: 60%;
     min-width: 50%;
-    margin: 50px auto;
+    margin: 7% auto;
     text-align: center;
     color: black;
     background-color: #e2e2e2;
     border-radius: 1.5vw 4vw;
-    box-shadow:15px 15px 10px rgb(114, 114, 114); 
+    box-shadow: 15px 15px 10px rgb(114, 114, 114);
   }
 }
 
@@ -269,7 +271,7 @@ textarea {
     color: black;
     background-color: #e2e2e2;
     border-radius: 1.5vw 4vw;
-    box-shadow:15px 15px 10px rgb(114, 114, 114); 
+    box-shadow: 15px 15px 10px rgb(114, 114, 114);
   }
 }
 @keyframes fadeInAnimation {
