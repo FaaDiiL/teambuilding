@@ -53,7 +53,7 @@ header h1 {
 
 .nav-link {
   display: block;
-  padding: 20px 35px 20px 35px;
+  padding: 2vw 3.5vw 2vw 3.5vw;
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -92,16 +92,17 @@ header h1 {
 .col {
   flex: 20%;
   margin: 2%;
+  padding: 1.5vw;
 }
 
 .movie-card {
   background-color: #f2f2f2;
   border-radius: 1.5vw 4vw;
-  padding: 1.5vw;
   box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2),
     0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
+  animation-duration: 1s;
 }
 
 .movie-image {
