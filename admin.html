@@ -37,17 +37,20 @@
         <form class="movie-form">
             <label for="title" id="title-label">Enter the movies title</label>
             <br>
-            <input required type="text" name="title" id="new-movie-title" placeholder="Title">
+            <input required type="text" name="title" id="new-movie-title" placeholder="Title...">
             <br>
+
             <label for="url" id="url-label">Enter the image url</label>
             <br>
-            <input required type="text" name="url" id="new-movie-url" placeholder="Image url">
+            <input required type="text" name="url" id="new-movie-url" placeholder="Image url...">
             <br>
+
             <label for="bio" id="bio-label">Enter the movie bio</label>
             <br>
-            <input required type="text" name="bio" id="new-movie-bio" placeholder="Movie bio">
+            <textarea required type="text" name="bio" id="new-movie-bio" placeholder="Movie bio..."></textarea>
             <br>
-            <label for="age" id="age-label">Enter the age limit of the movie (if any)</label>
+
+            <label for="age" id="age-label">Enter the age limit of the movie</label>
             <br>
             <select required name="age" id="new-movie-age-restriction">
                 <option value="7+">7+</option>
@@ -55,7 +58,8 @@
                 <option value="15+">15+</option>
             </select>
             <br>
-            <input type="submit" id="submit" value="Submit">
+
+            <button type="submit" id="submit" value="Submit">Submit</button>
             <h3 class="success-popup">The movie has been successfully added to the archive!</h3>
         
         </form>
