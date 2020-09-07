@@ -244,9 +244,10 @@ textarea {
     min-width: 50%;
     margin: 50px auto;
     text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-    border-radius: 2vw;
+    color: black;
+    background-color: #e2e2e2;
+    border-radius: 1.5vw 4vw;
+    box-shadow:15px 15px 10px rgb(114, 114, 114); 
   }
 }
 
@@ -265,9 +266,10 @@ textarea {
     min-width: 350px;
     margin: 50px auto;
     text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-    border-radius: 2vw;
+    color: black;
+    background-color: #e2e2e2;
+    border-radius: 1.5vw 4vw;
+    box-shadow:15px 15px 10px rgb(114, 114, 114); 
   }
 }
 @keyframes fadeInAnimation {
