@@ -1,59 +1,45 @@
-let movies = [
-  {
-    title: `Aquaman`,
-    bio: `Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.`,
-    img: `https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg`,
-    ageLimit: 11,
-  },
-  {
-    title: `The Dark Knight`,
-    bio: `When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.`,
-    img: `https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg`,
-    ageLimit: 15,
-  },
-  {
-    title: `The Lion King`,
-    bio: `Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.`,
-    img: `https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SY1000_CR0,0,673,1000_AL_.jpg`,
-    ageLimit: 7,
-  },
-  {
-    title: `Intouchables`,
-    bio: `After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.`,
-    img: `https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SY1000_CR0,0,674,1000_AL_.jpg`,
-    ageLimit: 7,
-  },
-  {
-    title: `Joker`,
-    bio: `In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.`,
-    img: `https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_CR0,0,674,1000_AL_.jpg`,
-    ageLimit: 15,
-  },
-  {
-    title: `Taare Zameen Par`,
-    bio: `An eight-year-old boy is thought to be a lazy trouble-maker, until the new art teacher has the patience and compassion to discover the real problem behind his struggles in school.`,
-    img: `https://m.media-amazon.com/images/M/MV5BMDhjZWViN2MtNzgxOS00NmI4LThiZDQtZDI3MzM4MDE4NTc0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,699,1000_AL_.jpg`,
-    ageLimit: 7,
-  },
-];
-
+let movies = []
 // Element selector
-const movieMain = document.querySelector("#movie-rendering");
+const movieMain = document.querySelector('#movie-rendering')
+const footerDate = document.querySelector('#current-date')
+const movieTitleElement = document.querySelector('#admin-movie-crud')
+const title = document.getElementById('new-movie-title')
+const bio = document.getElementById('new-movie-bio')
+const imgUrl = document.getElementById('new-movie-url')
+const pg = document.getElementById('new-movie-age-restriction')
+
+
+// LocalStorage
+const moviesJSON = localStorage.getItem('movies')
+
+if(moviesJSON !== null) {
+  movies = JSON.parse(moviesJSON).reverse()
+} 
 
 // Handler
-window.onload = function () {
-  renderMovies();
-  transition();
-};
 window.onscroll = function () {
-  myFunction();
-};
+  stickyNavbar()
+}
+
+if(movieTitleElement) {
+  movieTitleElement.addEventListener('submit', (e) => {
+    e.preventDefault()
+    adminCreate()
+  })
+}
 
 // Variables
 let navbar = document.getElementById("navbar");
 let sticky = navbar.offsetTop;
 
+
 // Functions
+// Global
+function currentDate() {
+  // variable that hold the current year
+  footerDate.innerText = new Date().getFullYear()
+}
+// index.html
 function transition() {
   let cards = document.querySelectorAll(".movie-card");
   //selector selecting all .movie-card and puts them in array
@@ -67,11 +53,13 @@ function renderMovies() {
   let movieList = document.createElement("section");
 
   // Setting up id
-  movieList.setAttribute("id", "new-movies");
-  movieList.setAttribute("class", "container");
-  movieMain.appendChild(movieList);
+  movieList.setAttribute('id', 'new-movies')
+  movieList.setAttribute('class', 'container')
+
+  movieMain.appendChild(movieList)
 
   movies.forEach((movie) => {
+    
     // Creating elements for movie card ...
     let movieCard = document.createElement("article");
     let movieImg = document.createElement("img");
@@ -94,10 +82,37 @@ function renderMovies() {
   });
 }
 
-function myFunction() {
+// Adding a movie to localStorage
+function adminCreate() {
+  let movieId = movies.length -1
+  movies.push({
+    id: movieId + 1,
+    title: title.value,
+    bio: bio.value,
+    img: imgUrl.value,
+    ageLimit: pg.value
+  })
+  localStorage.setItem('movies', JSON.stringify(movies))
+  successMsg()
+
+}
+
+// Let the navbar stick to the top
+function stickyNavbar() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
   }
+}
+
+// Adding a success message and delete it after 3 sek
+function successMsg() {
+  let successMsg = document.createElement('h3')
+  successMsg.setAttribute('style', 'background-color:green; color:white; text-align:center; border-radius: 10px;') 
+
+  successMsg.innerText = `Movie Added!`
+  movieTitleElement.appendChild(successMsg)
+
+  setTimeout(function(){successMsg.remove()}, 3000);
 }
