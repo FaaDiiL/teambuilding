@@ -184,15 +184,14 @@ h2 {
 
 .success-popup {
   color: black;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   border-radius: 6px;
   border: 3px solid black;
   padding: 5px;
   margin: 10px 20%;
 }
 
-input[type="text"],
-select {
+input[type=text], select {
   width: 50%;
   padding: 6px 8px;
   margin: 3px 0px 8px 0px;
@@ -201,7 +200,7 @@ select {
   box-sizing: border-box;
 }
 
-button[type="submit"] {
+button[type=submit] {
   width: 40%;
   background-color: white;
   color: black;
@@ -210,12 +209,12 @@ button[type="submit"] {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
   border: 3px solid black;
 }
 
-button[type="submit"]:hover {
+button[type=submit]:hover {
   background-color: #d1d1d1;
 }
 
@@ -228,7 +227,7 @@ textarea {
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media screen and (max-width: 992px) {

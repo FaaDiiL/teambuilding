@@ -61,6 +61,7 @@ function renderMovies() {
   movies.forEach((movie) => {
     
     // Creating elements for movie card ...
+    let movieListTitle = document.createElement("h2")
     let movieCard = document.createElement("article");
     let movieImg = document.createElement("img");
     let movieTitle = document.createElement("h2");
@@ -94,6 +95,7 @@ function adminCreate() {
   })
   localStorage.setItem('movies', JSON.stringify(movies))
   successMsg()
+  clearAdminFields ()
 
 }
 
@@ -105,7 +107,13 @@ function stickyNavbar() {
     navbar.classList.remove("sticky");
   }
 }
-
+function clearAdminFields () {
+    // Clear all the fields
+    title.value = "",
+    bio.value = "",
+    imgUrl.value = "",
+    pg.value = ''
+}
 // Adding a success message and delete it after 3 sek
 function successMsg() {
   let successMsg = document.createElement('h3')
