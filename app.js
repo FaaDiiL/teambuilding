@@ -24,7 +24,7 @@ window.onscroll = function () {
 if(movieTitleElement) {
   movieTitleElement.addEventListener('submit', (e) => {
     e.preventDefault()
-    adminCrud()
+    adminCreate()
   })
 }
 
@@ -72,8 +72,9 @@ function renderMovies() {
     movieCard.appendChild(movieBio)
   })
 }
-// admin.html
-function adminCrud() {
+
+// Adding a movie to localStorage
+function adminCreate() {
   let movieId = movies.length -1
   movies.push({
     id: movieId + 1,
@@ -86,6 +87,8 @@ function adminCrud() {
   successMsg()
 
 }
+
+// Let the navbar stick to the top
 function stickyNavbar() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add('sticky')
@@ -94,6 +97,7 @@ function stickyNavbar() {
   }
 }
 
+// Adding a success message and delete it after 3 sek
 function successMsg() {
   let successMsg = document.createElement('h3')
   successMsg.setAttribute('style', 'background-color:green; color:white; text-align:center; border-radius: 10px;') 
