@@ -10,9 +10,9 @@
     />
     <title>Index</title>
   </head>
-  <body>
+  <body  onload="renderMovies(), currentDate()">
     <header>
-      <h1>Kyh - Movies</h1>
+      <h1>Kyh - Home</h1>
     </header>
 
     <nav id="navbar">
@@ -21,7 +21,7 @@
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-list-item">
-          <a class="nav-link" href="">Movies</a>
+          <a class="nav-link" href="#">Movies</a>
         </li>
         <li class="nav-list-item">
           <a class="nav-link" href="about.html">About</a>
@@ -32,17 +32,12 @@
       </ul>
     </nav>
 
-    <main id="movie-rendering">
+    <main  id="movie-rendering">
       <h2>New Movies</h2>
     </main>
     <footer>
-      <small
-        >COPYRIGHT &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script></small
-      >
+      <small>COPYRIGHT &copy; <span id="current-date"></span> </small>
     </footer>
+    <script src=app.js></script>
   </body>
-  <script src="app.js"></script>
 </html>

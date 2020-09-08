@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -9,63 +9,81 @@
       rel="stylesheet"
     />
     <title>Admin</title>
-</head>
-<body>
+  </head>
+  <body onload="currentDate() ">
     <header>
-        <h1>Kyh - Movies</h1>
+      <h1>Kyh - Movies</h1>
     </header>
-  
-      <nav id="navbar">
-        <ul id="nav-list">
-          <li class="nav-list-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="">Movies</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="admin.html">Admin</a>
-          </li>
-        </ul>
-      </nav>
-    <main>
-    <h2>Add a new movie to the archive</h2>
-    <div class="form-section">
-        <form class="movie-form">
-            <label for="title" id="title-label">Enter the movies title</label>
-            <br>
-            <input required type="text" name="title" id="new-movie-title" placeholder="Title">
-            <br>
-            <label for="url" id="url-label">Enter the image url</label>
-            <br>
-            <input required type="text" name="url" id="new-movie-url" placeholder="Image url">
-            <br>
-            <label for="bio" id="bio-label">Enter the movie bio</label>
-            <br>
-            <input required type="text" name="bio" id="new-movie-bio" placeholder="Movie bio">
-            <br>
-            <label for="age" id="age-label">Enter the age limit of the movie (if any)</label>
-            <br>
-            <select required name="age" id="new-movie-age-restriction">
-                <option value="7+">7+</option>
-                <option value="11+">11+</option>
-                <option value="15+">15+</option>
-            </select>
-            <br>
-            <input type="submit" id="submit" value="Submit">
-            <h3 class="success-popup">The movie has been successfully added to the archive!</h3>
-        
-        </form>
-            
 
-    </div>
+    <nav id="navbar">
+      <ul id="nav-list">
+        <li class="nav-list-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="nav-link" href="#">Movies</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Add a new movie to the archive</h2>
+      <div class="form-section">
+        <form id="admin-movie-crud" class="movie-form">
+          <label for="title" id="title-label">Enter the movies title</label>
+          <br />
+          <input
+            required
+            type="text"
+            name="title"
+            id="new-movie-title"
+            placeholder="Title"
+          />
+          <br />
+          <label for="url" id="url-label">Enter the image url</label>
+          <br />
+          <input
+            required
+            type="text"
+            name="imgUrl"
+            id="new-movie-url"
+            placeholder="Image url"
+          />
+          <br />
+          <label for="bio" id="bio-label">Enter the movie bio</label>
+          <br />
+          <input
+            required
+            type="text"
+            name="bio"
+            id="new-movie-bio"
+            placeholder="Movie bio"
+          />
+          <br />
+          <label for="age" id="age-label"
+            >Enter the age limit of the movie (if any)</label
+          >
+          <br />
+          <select required name="age" id="new-movie-age-restriction">
+            <option value="" >Age limit</option>  
+            <option value="7">7+</option>
+            <option value="11">11+</option>
+            <option value="15">15+</option>
+          </select>
+          <br />
+          <input type="submit" id="submit" value="Submit" />
+        </form>
+      </div>
     </main>
     <footer>
-        <small>COPYRIGHT &copy;</small>
+      <small>COPYRIGHT &copy; <span id="current-date"></span></small>
     </footer>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
