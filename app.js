@@ -29,8 +29,8 @@ if(movieTitleElement) {
 }
 
 // Variables
-let navbar = document.getElementById('navbar')
-let sticky = navbar.offsetTop
+let navbar = document.getElementById("navbar");
+let sticky = navbar.offsetTop;
 
 
 // Functions
@@ -40,8 +40,17 @@ function currentDate() {
   footerDate.innerText = new Date().getFullYear()
 }
 // index.html
+function transition() {
+  let cards = document.querySelectorAll(".movie-card");
+  //selector selecting all .movie-card and puts them in array
+  for (let i = 0; i < cards.length; i++) {
+    let delay = i * 0.2;
+    cards[i].style.animationDelay = `${delay}s`;
+  }
+  //give each list item an animation-delay attribute
+}
 function renderMovies() {
-  let movieList = document.createElement('section')
+  let movieList = document.createElement("section");
 
   // Setting up id
   movieList.setAttribute('id', 'new-movies')
@@ -52,25 +61,25 @@ function renderMovies() {
   movies.forEach((movie) => {
     
     // Creating elements for movie card ...
-    let movieCard = document.createElement('article')
-    let movieImg = document.createElement('img')
-    let movieTitle = document.createElement('h2')
-    let movieBio = document.createElement('p')
+    let movieCard = document.createElement("article");
+    let movieImg = document.createElement("img");
+    let movieTitle = document.createElement("h2");
+    let movieBio = document.createElement("p");
 
-    movieCard.setAttribute('class', 'col movie-card')
-    movieImg.setAttribute('class', 'movie-image')
-    movieTitle.setAttribute('class', 'movie-title')
-    movieBio.setAttribute('class', 'movie-bio')
+    movieCard.setAttribute("class", "col movie-card");
+    movieImg.setAttribute("class", "movie-image");
+    movieTitle.setAttribute("class", "movie-title");
+    movieBio.setAttribute("class", "movie-bio");
 
-    movieImg.setAttribute('src', `${movie.img}`)
-    movieTitle.innerText = movie.title
-    movieBio.innerText = movie.bio
+    movieImg.setAttribute("src", `${movie.img}`);
+    movieTitle.innerText = movie.title;
+    movieBio.innerText = movie.bio;
 
-    movieList.appendChild(movieCard)
-    movieCard.appendChild(movieImg)
-    movieCard.appendChild(movieTitle)
-    movieCard.appendChild(movieBio)
-  })
+    movieList.appendChild(movieCard);
+    movieCard.appendChild(movieImg);
+    movieCard.appendChild(movieTitle);
+    movieCard.appendChild(movieBio);
+  });
 }
 
 // Adding a movie to localStorage
@@ -91,9 +100,9 @@ function adminCreate() {
 // Let the navbar stick to the top
 function stickyNavbar() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add('sticky')
+    navbar.classList.add("sticky");
   } else {
-    navbar.classList.remove('sticky')
+    navbar.classList.remove("sticky");
   }
 }
 
