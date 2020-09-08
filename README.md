@@ -1,5 +1,5 @@
 # Gruppövning 1
-Fadil, Viktor och Fredrik
+Fadil A, Viktor H and Fredrik W
 
 This is a simple prototype of a movie aggregation site/platform which uses javascript to render a group of movies as well as allowing users to use the admin page.
 
